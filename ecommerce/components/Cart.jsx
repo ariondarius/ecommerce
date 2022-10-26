@@ -7,7 +7,7 @@ import {toast} from 'react-hot-toast'
  import {urlFor} from '../lib/client'
 const Cart = () => {
   const cartRef=useRef();
-  const {totalPrice, totalQuantities, cartItems,setShowCart,toggleCartItemQuantity,onRemove}= useStateContext();
+  const {totalPrice,totalQuantities, cartItems,setShowCart,toggleCartItemQuantity,onRemove}= useStateContext();
   return (
     <div className='cart-wrapper' ref={cartRef}> 
       <div className="cart-container">
@@ -33,7 +33,7 @@ const Cart = () => {
   <div className="item-desc">
     <div className="flex top">
       <h5>{item.name}</h5>
-      <h4>${item.price}</h4>
+      <h4>${item.price * item.quantity}</h4>
     </div>
   
   <div className="flex bottom">
